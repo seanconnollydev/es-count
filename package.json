@@ -1,6 +1,6 @@
 {
   "name": "es-count",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A small JS utility that counts usage of modules in a code base.",
   "main": "index.js",
   "preferGlobal": true,
@@ -28,6 +28,7 @@
   "homepage": "https://github.com/goldenshun/es-count#readme",
   "dependencies": {
     "acorn": "7.3.1",
+    "acorn-dynamic-import": "4.0.0",
     "acorn-jsx": "5.2.0",
     "acorn-stage3": "3.0.0",
     "commander": "5.1.0",

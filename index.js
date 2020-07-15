@@ -5,9 +5,10 @@ const { program } = require('commander');
 const { Parser } = require('acorn');
 const jsx = require('acorn-jsx');
 const stage3 = require('acorn-stage3');
+const dynamicImport = require('acorn-dynamic-import').default;
 const glob = require('glob');
 
-const JSXParser = Parser.extend(jsx()).extend(stage3);
+const AcornParser = Parser.extend(dynamicImport).extend(jsx()).extend(stage3);
 
 /*
   npx es-count semantic-ui-react
@@ -43,9 +44,10 @@ function run(module, cmdObj) {
 
     let ast
     try {
-      ast = JSXParser.parse(content, {
+      ast = AcornParser.parse(content, {
         sourceType: 'module',
         allowHashBang: true,
+        allowImportExportEverywhere: true,
       });
     } catch (err) {
       console.error(`Error parsing ${file}: ${err}\n`);
@@ -73,7 +75,3 @@ function run(module, cmdObj) {
 }
 
 program.parse(process.argv);
-
-// console.log({program});
-// console.log('module', program.module);
-// console.log('glob', program.module);

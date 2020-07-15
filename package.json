@@ -1,0 +1,37 @@
+{
+  "name": "es-count",
+  "version": "1.0.0",
+  "description": "A small JS utility that counts usage of modules in a code base.",
+  "main": "index.js",
+  "preferGlobal": true,
+  "bin": {
+    "es-count": "./index.js"
+  },
+  "scripts": {
+    "test": "es-count semantic-ui-react",
+    "test:single": "es-count semantic-ui-react -g ./test/DeploymentTable.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/goldenshun/es-count.git"
+  },
+  "keywords": [
+    "javascript",
+    "modules",
+    "analysis"
+  ],
+  "author": "Sean Connolly",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/goldenshun/es-count/issues"
+  },
+  "homepage": "https://github.com/goldenshun/es-count#readme",
+  "dependencies": {
+    "acorn": "7.3.1",
+    "acorn-jsx": "5.2.0",
+    "acorn-stage3": "3.0.0",
+    "commander": "5.1.0",
+    "glob": "7.1.6",
+    "lodash": "4.17.19"
+  }
+}

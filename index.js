@@ -38,12 +38,19 @@ function run(module, cmdObj) {
       if (debug === true) {
         console.error(err);
       }
+      return;
     }
 
-    const ast = JSXParser.parse(content, {
-      sourceType: 'module',
-      allowHashBang: true,
-    });
+    let ast
+    try {
+      ast = JSXParser.parse(content, {
+        sourceType: 'module',
+        allowHashBang: true,
+      });
+    } catch (err) {
+      console.error(`Error parsing ${file}: ${err}\n`);
+      return;
+    }
 
     const importNodes = ast.body.filter(node => {
       return node.type === 'ImportDeclaration' && node.source.value === module;

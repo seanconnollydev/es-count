@@ -33,6 +33,6 @@
     "acorn-stage3": "3.0.0",
     "commander": "5.1.0",
     "glob": "7.1.6",
-    "lodash": "4.17.19"
+    "lodash": "4.17.21"
   }
 }
